@@ -20,6 +20,9 @@ function init() {
   });
 }
 
+// Initialize the dashboard
+init();
+
 function optionChanged(newSample) {
   // Fetch new data each time a new sample is selected
   buildMetadata(newSample);
@@ -135,10 +138,7 @@ function buildCharts(sample) {
         mode: "markers",
         marker: {
         size:sampleValues,
-        color: ['rgb(240, 255, 255)', 'rgb(0, 255, 255)',  'rgb(127, 255, 212)', 'rgb(230, 230, 250)', 'rgb(147, 112, 219)', 'rgb(128, 128, 128)', 'rgb(30, 144, 255)', 'rgb(0, 191, 255)',
-                'rgb(148, 0, 211)','rgb(0, 206, 209)','rgb(72, 61, 139)','rgb(139, 0, 139)','rgb(255, 248, 220)','rgb(100, 149, 237)','rgb(138, 43, 226)','rgb(245, 245, 220)','rgb(240, 248, 255)',
-                'rgb(0, 255, 127)','rgb(46, 139, 87)','rgb(102, 51, 153)','rgb(65, 105, 225)','rgb(0, 0, 125)'],
-        //colorscale: ['rgb(0, 255, 255)', 'rgb(138, 43, 226)',  'rgb(44, 160, 101)', 'rgb(255, 65, 54)']
+        color: otu_ids
       }
     }
   ];   
@@ -158,17 +158,17 @@ function buildCharts(sample) {
     // 16 Create the trace for the gauge chart.
     var gaugeData = [
       {
-        value: washFreqFloat, 
+        value: frequency, 
         type: "indicator",
         mode: "gauge+number",
-        title: { text: "<b>Belly Button Washing Frequency</b><br>Scrubs per Week"},
+        title: { text: "<b>Belly Button Washing Frequency</b><br>Scrubs per Week", font:{size:24},
         gauge: {
           axis: {
             range: [null,10],
             tickwidth: 1,
             tickcolor: "black"
         },
-        bar: {color: "indigo"},
+        bar: {color: "orange"},
         steps: [
           {range:[0,2], color: "Azure"},
           {range:[2,4], color: "Aqua"},
@@ -190,6 +190,3 @@ function buildCharts(sample) {
   
   });
 }
-
-// Initialize the dashboard
-init();
