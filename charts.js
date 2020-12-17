@@ -20,9 +20,6 @@ function init() {
   });
 }
 
-// Initialize the dashboard
-init();
-
 function optionChanged(newSample) {
   // Fetch new data each time a new sample is selected
   buildMetadata(newSample);
@@ -193,3 +190,6 @@ function buildCharts(sample) {
   
   });
 }
+
+// Initialize the dashboard
+init();
