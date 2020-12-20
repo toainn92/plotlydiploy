@@ -158,11 +158,11 @@ function buildCharts(sample) {
             borderwidth: 2,
             bordercolor: "gray",
             steps: [
-            { range: [0, 2], color: "Red" },
-            { range: [2, 4], color: "Orange" },
-            { range: [4, 6], color: "Yellow" },
-            { range: [6, 8], color: "Green" },
-            { range: [8, 10], color: "royalblue" }
+            { range: [0, 2], color: "OldLace" },
+            { range: [2, 4], color: "PapayaWhip" },
+            { range: [4, 6], color: "Moccasin" },
+            { range: [6, 8], color: "NavajoWhite" },
+            { range: [8, 10], color: "PeachPuff" }
             ],
             threshold: {
             line: { color: "red", width: 4 },
@@ -176,9 +176,6 @@ function buildCharts(sample) {
     var gaugeLayout = {
         width: 500,
         height: 400,
-       // margin: { t: 25, r: 25, l: 25, b: 25 },
-        paper_bgcolor: "rgba(0,0,0,0)",
-        plot_bgcolor: "rgba(0,0,0,0)",
         font: { color: "darkblue", family: "Arial" }
     };
 
