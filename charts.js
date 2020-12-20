@@ -100,7 +100,8 @@ function buildCharts(sample) {
     ];
     // Create the layout for the bar chart. 
     var barLayout = {
-      title:"Top 10 Bacteria Cultures Found",
+      title:"Top 10 Bacteria Cultures Found", font: {size: 18},
+      font: {color: "darkblue", family: "Arial"},
       margin: {t:30,l:150}
     
     };
@@ -112,16 +113,11 @@ function buildCharts(sample) {
     ///D2
     // Create the trace for the bubble chart.
     var bubbleData = [{
-        //domain: {x:[0,1],y:[0,1]},
-        //value: frequency,
         mode: 'markers',
-        //title: {text:"<b>Belly Button Washing Frequency</b> <br>Scrubs per week"},
-        //type: "indicator",
-        //mode: "gauge+"
+
         x:otu_ids,
         y:sample_values ,
         text: otu_labels,
-        //hovertemplate: '<i>Sample Value</i>: 'Sample Value'%{y:.2f}' + '<br><b>X</b>: %{x}<br>' + '<b>%{text}</b>',
         marker:{
             color: otu_ids,
             size: sample_values
@@ -150,10 +146,10 @@ function buildCharts(sample) {
         type: "indicator",
         mode: "gauge+number",
         value: frequency,
-        title: { text: "<b>Belly Button Washing Frequency</b> <br>Scrubs per week", font: { size: 24 } },
+        title: { text: "<b>Belly Button Washing Frequency</b> <br>Scrubs per week", font: { size: 18 } },
         gauge: {
             axis: { range: [null, 10], tickwidth: 1, tickcolor: "darkblue" },
-            bar: { color: "darkblue" },
+            bar: { color: "tomato" },
             bgcolor: "Blue",
             borderwidth: 2,
             bordercolor: "gray",
@@ -163,11 +159,7 @@ function buildCharts(sample) {
             { range: [4, 6], color: "Moccasin" },
             { range: [6, 8], color: "NavajoWhite" },
             { range: [8, 10], color: "PeachPuff" }
-            ],
-            threshold: {
-            line: { color: "red", width: 4 },
-            thickness: 0.75,
-            value: 9.8
+            ]
             }
         }
         }
