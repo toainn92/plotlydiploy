@@ -102,8 +102,6 @@ function buildCharts(sample) {
     var barLayout = {
       title:"Top 10 Bacteria Cultures Found",
       margin: {t:30,l:150}
-      paper_bgcolor: "light blue",
-      font: { color: "darkblue", family: "Arial" }
     
     };
 
@@ -137,8 +135,6 @@ function buildCharts(sample) {
     var bubbleLayout = {
         
         title: 'Bacteria Cultures Per Sample',
-        paper_bgcolor: "light blue",
-        font: { color: "darkblue", family: "Arial" }
         
     };
 
@@ -181,7 +177,8 @@ function buildCharts(sample) {
         width: 500,
         height: 400,
        // margin: { t: 25, r: 25, l: 25, b: 25 },
-        paper_bgcolor: "light blue",
+        paper_bgcolor: "rgba(0,0,0,0)",
+        plot_bgcolor: "rgba(0,0,0,0)"
         font: { color: "darkblue", family: "Arial" }
     };
 
