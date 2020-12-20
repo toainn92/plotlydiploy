@@ -59,6 +59,7 @@ function buildCharts(sample) {
   // 2. Use d3.json to load and retrieve the samples.json file 
   d3.json("samples.json").then((data) => {
     console.log(data)
+
     // 3. Create a variable that holds the samples array. 
     var arraySample = data.samples;
     var metaData = data.metadata;
@@ -125,11 +126,6 @@ function buildCharts(sample) {
     Plotly.newPlot("bar", barData, barLayout);
     
     // 11. Create the trace for the bubble chart.
-    //x axis is otu_ids.
-    //y axis is sample_values.
-    //sample_values as marker size.
-    //otu_ids as marker colors.
-    //otu_labels as hover-text values.
     var bubbleData = [
       {
         x: ID,
@@ -137,11 +133,8 @@ function buildCharts(sample) {
         text: otuLabels,
         mode: "markers",
         marker: {
-        size:sampleValues,
-        color: ['rgb(240, 255, 255)', 'rgb(0, 255, 255)',  'rgb(127, 255, 212)', 'rgb(230, 230, 250)', 'rgb(147, 112, 219)', 'rgb(128, 128, 128)', 'rgb(30, 144, 255)', 'rgb(0, 191, 255)',
-                'rgb(148, 0, 211)','rgb(0, 206, 209)','rgb(72, 61, 139)','rgb(139, 0, 139)','rgb(255, 248, 220)','rgb(100, 149, 237)','rgb(138, 43, 226)','rgb(245, 245, 220)','rgb(240, 248, 255)',
-                'rgb(0, 255, 127)','rgb(46, 139, 87)','rgb(102, 51, 153)','rgb(65, 105, 225)','rgb(0, 0, 125)'],
-        //colorscale: ['rgb(0, 255, 255)', 'rgb(138, 43, 226)',  'rgb(44, 160, 101)', 'rgb(255, 65, 54)']
+          size:sampleValues,
+          color: ID
       }
     }
   ];   
@@ -164,20 +157,16 @@ function buildCharts(sample) {
         value: washFreqFloat, 
         type: "indicator",
         mode: "gauge+number",
-        title: { text: "<b>Belly Button Washing Frequency</b><br>Scrubs per Week"},
+        title: { text: "<b>Belly Button Washing Frequency</b><br>Scrubs per Week", font:{size:24}},
         gauge: {
-          axis: {
-            range: [null,10],
-            tickwidth: 1,
-            tickcolor: "black"
-        },
-        bar: {color: "indigo"},
-        steps: [
-          {range:[0,2], color: "Azure"},
-          {range:[2,4], color: "Aqua"},
-          {range:[4,6], color: "Aquamarine"},
-          {range:[6,8], color: "lavender"},
-          {range:[8,10], color: "mediumPurple"}
+          axis: {range: [null,10], tickwidth: 1, tickcolor: "darkblue"},
+          bar: {color: "Black"},
+          steps: [
+          {range:[0,2], color: "Dark Orange"},
+          {range:[2,4], color: "Orange Peel"},
+          {range:[4,6], color: "Golden Yellow"},
+          {range:[6,8], color: "Electric Lime"},
+          {range:[8,10], color: "Spring Bud"}
           ]
         },
       } 
@@ -185,7 +174,9 @@ function buildCharts(sample) {
     
     // 17. Create the layout for the gauge chart.
     var gaugeLayout = { 
-     margin: {t:10,b:0,l:15,r:25}
+        width:500
+        height:400,
+        paper_bgcolor: "Deep sky blue"
     };
 
     // 18. Use Plotly to plot the gauge data and layout.
