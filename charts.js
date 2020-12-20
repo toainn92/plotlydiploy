@@ -101,6 +101,7 @@ function buildCharts(sample) {
     var barLayout = {
       title:"<b>Top 10 Bacteria Cultures Found<b>", font: {size: 18},
       font: {color: "midnightblue", family: "Arial"},
+      paper_bgcolor: "lightblue",
       margin: {
         l:100,
         r:100,
@@ -134,6 +135,7 @@ function buildCharts(sample) {
     var bubbleLayout = {
         title: '<b>Bacteria Cultures Per Sample<b>', font: {size:18},
         font: {color: "midnightblue", family: "Arial"},
+        paper_bgcolor: "lightblue",
         xaxis: {title: "OTU ID"}
         
     };
@@ -170,6 +172,7 @@ function buildCharts(sample) {
     // 5. Create the layout for the gauge chart.
     var gaugeLayout = {
         margin: {t:10,b:0,l:15,r:25},
+        paper_bgcolor: "lightblue",
         font: { color: "midnightblue", family: "Arial" }
     };
 
