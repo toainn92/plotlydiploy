@@ -101,8 +101,12 @@ function buildCharts(sample) {
     var barLayout = {
       title:"<b>Top 10 Bacteria Cultures Found<b>", font: {size: 18},
       font: {color: "midnightblue", family: "Arial"},
-      margin: {t:30,l:150}
-    
+      margin: {
+        l:100,
+        r:100,
+        t:100,
+        b:100,
+      }
     };
 
     //10. Use Plotly to plot the data with the layout. 
@@ -165,8 +169,7 @@ function buildCharts(sample) {
     ];
     // 5. Create the layout for the gauge chart.
     var gaugeLayout = {
-        width: 500,
-        height: 400,
+        margin: {t:10,b:0,l:15,r:25},
         font: { color: "midnightblue", family: "Arial" }
     };
 
