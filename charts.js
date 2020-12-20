@@ -178,7 +178,7 @@ function buildCharts(sample) {
         height: 400,
        // margin: { t: 25, r: 25, l: 25, b: 25 },
         paper_bgcolor: "rgba(0,0,0,0)",
-        plot_bgcolor: "rgba(0,0,0,0)"
+        plot_bgcolor: "rgba(0,0,0,0)",
         font: { color: "darkblue", family: "Arial" }
     };
 
